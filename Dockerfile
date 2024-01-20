@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . /app/
 
+RUN npm install -g bun
 RUN yarn
-RUN yarn add bun
 
 CMD [ "yarn", "run", "start" ]
