@@ -1,10 +1,10 @@
 # use the official Bun image
 # see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1 as base
+FROM node:18-alpine
 WORKDIR /app
 
 COPY . /app/
 
-RUN bun install
+RUN yarn
 
-CMD [ "bun", "run", "src/index.ts" ]
+CMD [ "yarn", "run", "src/index.ts" ]
