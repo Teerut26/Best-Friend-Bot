@@ -7,4 +7,4 @@ COPY . /app/
 
 RUN yarn
 
-CMD [ "yarn", "run", "src/index.ts" ]
+CMD [ "yarn", "run", "start" ]
