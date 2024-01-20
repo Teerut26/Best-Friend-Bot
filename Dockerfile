@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY . /app/
 
+RUN yarn add bun
 RUN yarn
 
 CMD [ "yarn", "run", "start" ]
