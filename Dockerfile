@@ -7,6 +7,6 @@ COPY . /app/
 
 FROM base AS install
 RUN bun install
-
+EXPOSE 8080
 # run the app
 CMD ["bun", "start"]
