@@ -3,6 +3,7 @@ import countDown from '../util/coutdown.ts';
 import { toDateString, toMoment } from '../util/toDate.ts';
 import type { Command } from './index.ts';
 import _ from 'lodash';
+import axios from 'axios';
 
 export default {
 	data: {
@@ -10,7 +11,10 @@ export default {
 		description: 'Show the birthday of friends.',
 	},
 	async execute(interaction) {
-		const result = await resultBirthDays();
+		const { data: resultUrl } = await axios.get(process.env.BIRTHDAY_JSON_URL!);
+
+		const result = JSON.parse(resultUrl.files['birthday.json'].content);
+
 		await interaction.reply({
 			embeds: [
 				{
